@@ -1,4 +1,13 @@
 require('dotenv').config();
+async function getImage(query) {
+    const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=XUhm06LwXiVF23EtiHS0jpMEtAKje9Nk&q=${query}&limit=25&offset=0&rating=g&lang=en&bundle=messaging_non_clips`
+
+    const response = await fetch(endpoint)
+    const data = await response.json()
+    console.log(data)
+    return data[0]
+}
+getImage('clam');
 
 // Print out value of API key stored in .env file
 console.log(process.env.API_KEY)
