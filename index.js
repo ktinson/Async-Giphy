@@ -4,8 +4,10 @@ async function getImage(query) {
 
     const response = await fetch(endpoint)
     const data = await response.json()
+    const image = data.data[0].images.original.url
     console.log(data)
-    return data[0]
+    console.log(image)
+    return image
 }
 getImage();
 
