@@ -7,7 +7,7 @@ async function getImage(query) {
     console.log(data)
     return data[0]
 }
-getImage('clam');
+getImage();
 
 // Print out value of API key stored in .env file
 console.log(process.env.API_KEY)
